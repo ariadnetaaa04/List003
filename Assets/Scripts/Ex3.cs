@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ex2 : MonoBehaviour
+public class Ex3 : MonoBehaviour
 {
     public int x;
+    public int y;
+
     // Start is called before the first frame update
     void Start()
     {
-        IsEven(x);
+        IsExact(x, y);
     }
 
     // Update is called once per frame
@@ -16,14 +18,13 @@ public class Ex2 : MonoBehaviour
     {
         
     }
-    private bool IsEven(int x)
+
+    private void IsExact(int x, int y)
     {
-        if (x % 2 == 0)
+        if (x % y == 0)
         {
-            Debug.Log("The number it's even");
-            return true;
+            Debug.Log($"The division is exact");
         }
-        Debug.Log("The number it's odd");
-        return false;
+        Debug.Log($"The division is not exact");
     }
 }
